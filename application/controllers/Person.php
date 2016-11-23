@@ -228,12 +228,11 @@ class Person extends CI_Controller {
 
 		$this->load->library('email');
 
-		$config['protocol'] = 'sendmail';
-		$config['mailpath'] = '/usr/sbin/sendmail';
-		$config['charset'] = 'iso-8859-1';
-		$config['wordwrap'] = TRUE;
+		$config['protocol'] = 'smtp';
+		    $config['smtp_host'] = 'localhost';
+		    $config['validate'] = 'TRUE';
+		    $this->email->initialize($config);
 
-		$this->email->initialize($config);
 		
 		$this->email->from('redhabayuanggara@yahoo.co.id','Ronaldozc');
 		$this->email->to('redhabayuanggara@gmail.com');
