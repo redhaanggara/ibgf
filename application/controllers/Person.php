@@ -222,5 +222,17 @@ class Person extends CI_Controller {
 			exit();
 		}
 	}
+	public function send_email(){
+		$this->load->library('email');
+		$this->email->from('redhabayuanggara@gmail.com','C.Ronaldo');
+		$this->email->to('redhabayuanggara@yahoo.co.id');
+		$this->email->subject('Message From Out Form');
+		$this->email->message("masukan eaa");
+		$this->email->send();
+
+		echo $this->email->print_debugger();
+	}
+	
+	
 
 }
