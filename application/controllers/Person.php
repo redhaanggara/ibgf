@@ -233,7 +233,7 @@ class Person extends CI_Controller {
 			'smtp_pass'=> 'imthebest6537RH'
 			);
 
-		$this->load->library('email', $config);
+		$this->load->library('Email', $config);
 		$this->email->from('redhabayuanggara@gmail.com','C.Ronaldo');
 		$this->email->to('redhabayuanggarayahoo.co.id');
 		$this->email->subject('Message From Out Form');
