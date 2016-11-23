@@ -228,7 +228,7 @@ class Person extends CI_Controller {
 
 		$this->load->library('email');
 		$this->email->from('redhabayuanggara@gmail.com','C.Ronaldo');
-		$this->email->to('redhabayuanggarayahoo.co.id');
+		$this->email->to('redhabayuanggara@yahoo.co.id');
 		$this->email->subject('Message From Out Form');
 		$this->email->message('masukan eaa');
 		
