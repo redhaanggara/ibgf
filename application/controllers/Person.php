@@ -223,16 +223,28 @@ class Person extends CI_Controller {
 		}
 	}
 	public function send_email(){
-		$this->load->library('email');
-		$this->email->from('redhabayuanggara@gmail.com','C.Ronaldo');
-		$this->email->to('redhabayuanggara@yahoo.co.id');
-		$this->email->subject('Message From Out Form');
-		$this->email->message("masukan eaa");
-		$this->email->send();
 
-		echo $this->email->print_debugger();
+		$config=array(
+			'protocol'=> 'smtp',
+			'smtp_host'=> 'ssl://smtp.googlemail.com',
+			'smtp_post'=> 465,
+			'smtp_user'=> 'redhabayuanggara@gmail.com',
+			'smtp_pass'=> 'imthebest6537RH'
+			);
+
+		$this->load->library('email', $config);
+		$this->email->from('redhabayuanggara@gmail.com','C.Ronaldo');
+		$this->email->to('redhabayuanggarayahoo.co.id');
+		$this->email->subject('Message From Out Form');
+		$this->email->message('masukan eaa');
+		
+		if($this->email->send()){
+			echo "Your email was sent";
+		}
+		else{
+			show_error($this->email->print_debugger());
+		}
 	}
 	
-	
-
 }
+?>
