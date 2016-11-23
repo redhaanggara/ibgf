@@ -222,6 +222,7 @@ class Person extends CI_Controller {
 			exit();
 		}
 	}
+	
 	public function send_email(){
 
 		$config=array(
@@ -247,4 +248,3 @@ class Person extends CI_Controller {
 	}
 	
 }
-?>
