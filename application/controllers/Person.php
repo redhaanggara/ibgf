@@ -227,10 +227,21 @@ class Person extends CI_Controller {
 
 
 		$this->load->library('email');
-		$this->email->from('redhabayuanggara@gmail.com','C.Ronaldo');
-		$this->email->to('redhabayuanggara@yahoo.co.id');
-		$this->email->subject('Message From Out Form');
-		$this->email->message('masukan eaa');
+
+		$config['protocol'] = 'sendmail';
+		$config['mailpath'] = '/usr/sbin/sendmail';
+		$config['charset'] = 'iso-8859-1';
+		$config['wordwrap'] = TRUE;
+
+		$this->email->initialize($config);
+		
+		$this->email->from('redhabayuanggara@yahoo.co.id','Ronaldozc');
+		$this->email->to('redhabayuanggara@gmail.com');
+	
+		
+		$this->email->subject('Email Test');
+		$this->email->message('Testing the email class.');
+
 		
 		if($this->email->send()){
 			echo "Your email was sent";
