@@ -225,15 +225,8 @@ class Person extends CI_Controller {
 	
 	public function send_email(){
 
-		$config=array(
-			'protocol'=> 'smtp',
-			'smtp_host'=> 'ssl://smtp.googlemail.com',
-			'smtp_post'=> 465,
-			'smtp_user'=> 'redhabayuanggara@gmail.com',
-			'smtp_pass'=> 'imthebest6537RH'
-			);
 
-		$this->load->library('Email', $config);
+		$this->load->library('email');
 		$this->email->from('redhabayuanggara@gmail.com','C.Ronaldo');
 		$this->email->to('redhabayuanggarayahoo.co.id');
 		$this->email->subject('Message From Out Form');
